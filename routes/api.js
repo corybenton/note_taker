@@ -3,9 +3,9 @@ const notedb = require('../db/db.json');
 const fs = require('fs');
 const uuid = require('../helpers/uuid');
 
-api.get('/api/notes', (req, res) => res.json(notedb));
+api.get('/notes', (req, res) => res.json(notedb));
 
-api.post('/api/notes', (req, res) => {
+api.post('/notes', (req, res) => {
     const { title, text } = req.body;
 
     if (title && text) {
@@ -39,7 +39,7 @@ api.post('/api/notes', (req, res) => {
     }
 });
 
-api.delete('/api/notes/:id', (req, res) =>
+api.delete('/notes/:id', (req, res) =>
     console.log("Working on it.")
 );
 
