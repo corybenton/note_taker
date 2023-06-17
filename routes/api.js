@@ -13,7 +13,7 @@ api.post('/notes', (req, res) => {
         const newNote = {
             title,
             text,
-            review_id: uuid(),
+            note_id: uuid(),
         };
 
         fs.readFile(notedb, 'utf8', (err, data) => {
@@ -23,8 +23,7 @@ api.post('/notes', (req, res) => {
                 const currentdb = JSON.parse(data);
                 currentdb.push(newNote);
 
-                fs.writeFile(notedb,
-                    JSON.stringify(currentdb, null, 4),
+                fs.writeFile(notedb, JSON.stringify(currentdb, null, 4),
                     (writeErr) => writeErr
                         ? console.error(writeErr)
                         : console.info("Success")
@@ -40,8 +39,30 @@ api.post('/notes', (req, res) => {
     }
 });
 
-api.delete('/notes/:id', (req, res) =>
-    console.log("Working on it.")
-);
+api.delete('/notes/:note_id', (req, res) => {
+    const noteid = req.params.note_id;
+    fs.readFile(notedb, 'utf-8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const filterS = JSON.parse(data);
+            const result = [];
+            for (let i = 0; i < filterS.length; i++) {
+                if (filterS[i].note_id != noteid) {
+                    result.push(filterS[i]);
+                }
+            }
+            
+            fs.writeFile(notedb, JSON.stringify(result, null, 4),
+                (writeErr) => writeErr
+                    ? console.error(writeErr)
+                    : console.info("Successfully deleted")
+            )
+            res.json(result);
+
+        }
+    })
+}
+)
 
 module.exports = api;
