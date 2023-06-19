@@ -25,6 +25,7 @@ go to https://desolate-temple-59283.herokuapp.com/
 ## Usage
 
 go to https://desolate-temple-59283.herokuapp.com/. click on get started. then enter notes as needed.
+[demo](https://drive.google.com/file/d/1_2dcU3w3kE5hQKlpRjabrM6PJL5fjiSK/view)
 
 ## License
 
