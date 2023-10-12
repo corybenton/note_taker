@@ -27,6 +27,9 @@ go to https://desolate-temple-59283.herokuapp.com/
 go to https://desolate-temple-59283.herokuapp.com/. click on get started. then enter notes as needed.
 [demo](https://drive.google.com/file/d/1_2dcU3w3kE5hQKlpRjabrM6PJL5fjiSK/view)
 
+<img width="503" alt="Screenshot 2023-08-27 140617" src="https://github.com/corybenton/note_taker/assets/128768293/1e77c4bd-06eb-4a87-8ade-a851002f5e75">
+
+
 ## License
 
 This program is using the MIT license.
